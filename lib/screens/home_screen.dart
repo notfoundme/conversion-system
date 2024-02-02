@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 import '../widgets/custom_home_container.dart';
 
 class HomeScreen extends StatelessWidget {
-  late IconData icon;
-  late String text;
+
   HomeScreen({
     super.key,
   });
@@ -22,10 +21,13 @@ class HomeScreen extends StatelessWidget {
             crossAxisCount: 2,
             childAspectRatio: 1.5,
             // crossAxisSpacing: 10,
-            // mainAxisSpacing: 15
+            // mainAxisSpacing: 10
           ),
           itemCount: 4,
           itemBuilder: (context, index) {
+            //if we defined icon and text in stateless 
+              late IconData icon;
+             late String text;
             if (index == 0) {
               icon = Icons.cake;
               text = 'Age';
@@ -37,17 +39,17 @@ class HomeScreen extends StatelessWidget {
               text = 'Date';
             } else if (index == 3) {
               icon = Icons.numbers;
-              text = 'Alarm';
+              text = 'Number System';
             }
-
+           
             return GestureDetector(
-              onTap: () {
+              onTap: () { 
                 // Handle onTap events based on the index
                 if (index == 0) {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const AgeScreen(),
+                      builder: (context) =>  AgeScreen(label: text,),
                     ),
                   );
                 } else if (index == 1) {
@@ -68,7 +70,7 @@ class HomeScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const NumberSystemScreen(),
+                      builder: (context) => NumberSystemScreen(),
                     ),
                   );
                 }

@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 
+
 class customContainer extends StatelessWidget {
   IconData icon;
   String text;
@@ -12,6 +13,7 @@ class customContainer extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
+          // width: MediaQuery.of(context).size.width*0.4,
           decoration: BoxDecoration(
               gradient: const LinearGradient(
                 colors: <Color>[Color(0x0F88EEFF), Color(0x2F0099BB)],
@@ -25,7 +27,7 @@ class customContainer extends StatelessWidget {
                 Icon(icon),
                 Text(
                   text,
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
                 ),
               ],
             ),
